@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
+@CrossOrigin(origins = "*")
 
 @AllArgsConstructor
 @RestController
@@ -19,7 +20,6 @@ import java.util.List;
 public class EmployeeController {
     private EmployeeService employeeService;
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     public ResponseEntity<EmployeeDTO> createEmployee(@RequestBody EmployeeDTO employeeDTO){
        EmployeeDTO savedEmployee= employeeService.createEmployee(employeeDTO);
